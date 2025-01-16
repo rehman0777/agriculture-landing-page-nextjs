@@ -1,14 +1,8 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-outfit: 'Outfit', serif;
+  --font-shadows_two: 'Shadows Into Light Two', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 html,
 body {
@@ -17,9 +11,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,6 +26,13 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.HeroBanner{
+  background-image: url(../images/hero.png);
+}
+.freshNaturalBg{
+  background-image: url('../images/Rectangle\ \(1\).png');
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {
