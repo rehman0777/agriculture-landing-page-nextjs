@@ -8,12 +8,28 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background: #FFFFFF;
 }
 
 body {
   font-family: var(--font-outfit) !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar-track {
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1F4E3D;
+  border-radius: 20px;
 }
 
 * {
@@ -26,10 +42,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.HeroBanner{
+
+.HeroBanner {
   background-image: url(../images/hero.png);
 }
-.freshNaturalBg{
+
+.freshNaturalBg {
   background-image: url('../images/Rectangle\ \(1\).png');
 }
 

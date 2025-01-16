@@ -46,18 +46,18 @@ function Navbar() {
   
 
     const DrawerList = (
-        <Box sx={{ width: 320, padding: '20px 30px' }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 320, padding: '20px' }} role="presentation" onClick={toggleDrawer(false)}>
             <Box sx={{display:'flex'}}>
-                <CloseIcon sx={{ml:'auto'}} onClick={toggleDrawer(true)} />
+                <CloseIcon sx={{ml:'auto', cursor:'pointer'}} onClick={toggleDrawer(true)} />
             </Box>
-          <List>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },alignItems:'flex-start', flexDirection:'column', justifyContent: 'center', gap: '30px' }}>
+          <List sx={{marginTop:'30px'}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },alignItems:'flex-start', flexDirection:'column', justifyContent: 'center', gap: '10px' }}>
                         {pages.map((page) => (
                             <Link
                                 key={page}
                                 href={'/'}
                                 onClick={handleCloseNavMenu}
-                                style={{ my: 2, color: '#232323', display: 'block', textTransform: 'capitalize' }}
+                                style={{ my: 0, color: '#232323', display: 'block', textTransform: 'capitalize' }}
                             >
                                 <Typography sx={{
                                     textAlign: 'center', fontFamily: 'var(--font-outfit)', fontWeight: '600', ':hover': {
