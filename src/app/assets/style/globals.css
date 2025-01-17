@@ -50,6 +50,18 @@ a {
 .freshNaturalBg {
   background-image: url('../images/Rectangle\ \(1\).png');
 }
+.linkArrow{
+  display: flex;
+  align-items: center;
+}
+.linkArrow:hover .linkArrowIcon {
+  transform: translateX(10px); 
+  transition: transform 0.5s; 
+}
+.MuiTabs-flexContainer{
+  justify-content: space-between;
+}
+
 
 
 @media (prefers-color-scheme: dark) {
