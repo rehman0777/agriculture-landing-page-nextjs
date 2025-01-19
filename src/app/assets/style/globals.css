@@ -50,19 +50,40 @@ a {
 .freshNaturalBg {
   background-image: url('../images/Rectangle\ \(1\).png');
 }
-.linkArrow{
+
+.linkArrow {
   display: flex;
   align-items: center;
+  font-family: var(--font-outfit);
+  font-weight: 600;
 }
+
 .linkArrow:hover .linkArrowIcon {
-  transform: translateX(10px); 
-  transition: transform 0.5s; 
+  transform: translateX(10px);
+  transition: transform 0.5s;
 }
-.MuiTabs-flexContainer{
+
+.MuiTabs-flexContainer {
   justify-content: space-between;
 }
 
+.Slider_section {
+  background-image: url(../images/Rectangle\ \(2\).png);
+}
 
+.slick-dots li button:before {
+  border: 1px solid #0000003a;
+  border-radius: 50px;
+}
+
+.slick-dots li.slick-active button:before {
+  border: 1px solid #000000b9;
+  border-radius: 50px;
+}
+
+.footerBottomLink:hover {
+  color: #FFFFFF !important;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

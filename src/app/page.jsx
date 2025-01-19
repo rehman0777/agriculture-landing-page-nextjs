@@ -9,6 +9,7 @@ import FeatureProducts from '@/app/component/FeatureProducts';
 import HealthyLifeSection from '@/app/component/HealthyLifeSection';
 import TabFeatureProduct from '@/app/component/TabFeatureProduct';
 import OurBlog from '@/app/component/OurBlog';
+import TestimonialSlider from '@/app/component/Testimonials';
  
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <FeatureProducts/>
         <HealthyLifeSection/>
         <TabFeatureProduct/>
+        <TestimonialSlider/>
         <OurBlog/>
       </Box>
     </>

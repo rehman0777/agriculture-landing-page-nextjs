@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import { Shadows_Into_Light_Two } from "next/font/google";
 import "@/app/assets/style/globals.css";
 import Header from '@/app/component/Header/Header'
+import Footer from '@/app/component/Footer/Footer'
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       <body className={`${outfit.variable} ${shadowsTwo.variable}`}>
         <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

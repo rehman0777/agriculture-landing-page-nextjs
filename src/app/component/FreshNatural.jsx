@@ -7,7 +7,7 @@ import Item from './Item'
 
 const FreshNatural = () => {
     return (
-        <Box className='freshNaturalBg' sx={{ height: 550, position: 'relative', backgroundSize: 'cover', backgroundPositionX: 'right', backgroundRepeat: "no-repeat" }}>
+        <Box className='freshNaturalBg' sx={{ height: 550, position: 'relative', backgroundSize: 'cover', backgroundPositionX: {md:'right', xs:'left'}, backgroundRepeat: "no-repeat" }}>
             <Container fixed sx={{ height: '100%' }}>
                 <Grid container spacing={0} sx={{ height: '100%' }}>
                     <Grid size={{ md: 6 }} sx={{ height: '100%' }}>
@@ -22,8 +22,14 @@ const FreshNatural = () => {
                             </Box>
                             <Box sx={{display:'flex', marginTop:'100px', flexDirection:'column', gap:'15px', verticalAlign:'center'}}>
                                 <Box>
-                                <Typography variant="h3" sx={{fontFamily:'var(-font-outfit)', fontWeight:'600', color:'#49A760'}}>Fresh & Natural</Typography>
-                                <Typography variant="h3" sx={{fontFamily:'var(-font-outfit)', fontWeight:'300', color:'#04000B'}}>Produc in Our Store</Typography>
+                                <Typography variant="h3" sx={{typography: {
+      xs: 'h4', 
+      sm: 'h3',
+    },fontFamily:'var(-font-outfit)', fontWeight:'600', color:'#49A760'}}>Fresh & Natural</Typography>
+                                <Typography variant="h3" sx={{typography: {
+      xs: 'h4', 
+      sm: 'h3',
+    },fontFamily:'var(-font-outfit)', fontWeight:'300', color:'#04000B'}}>Produc in Our Store</Typography>
                                 </Box>
                                 <Typography variant="subtitle2" sx={{fontFamily:'var(-font-outfit)', fontWeight:'500', color:'#666666'}}>Drawings can followed improved out sociable not. Earnestly so do instantly pretended.
 See general few civilly amiable pleased account carried. Excellence projecting is

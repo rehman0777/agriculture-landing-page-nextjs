@@ -40,8 +40,8 @@ const OrganicFreshFruit = () => {
         <Box sx={{ padding: '80px 0px' }}>
             <Container fixed>
                 <Grid container spacing={8}>
-                    <Grid size={{ md: 4 }}>
-                        <Item sx={{ bgcolor: '#49A760', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', borderRadius: '6px', padding: '40px 30px 280px 30px' }}>
+                    <Grid size={{ lg: 4, }} sx={{width:'100%'}}>
+                        <Item sx={{ bgcolor: '#49A760', position: 'relative', width:'100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', borderRadius: '6px', padding: '40px 30px 280px 30px' }}>
                             <Typography variant="h4" sx={{ textAlign: 'center', fontFamily: 'var(--font-outline)', fontWeight: '600', color: "#FFFFFF" }}>Organic
                                 Fresh Fruit</Typography>
                             <Box
@@ -90,7 +90,7 @@ const OrganicFreshFruit = () => {
                             <Image src={Apple} style={{ position: 'absolute', bottom: '20px', }} alt='Apple' />
                         </Item>
                     </Grid>
-                    <Grid size={{ md: 8 }} sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                    <Grid size={{ lg: 8, }} sx={{ display: 'flex',width:'100%', flexDirection: 'column', gap: 4 }}>
                         <Item>
                             <Box sx={{ display: 'flex', gap: '50px', alignItems: 'center', flexDirection: { xs: 'column', sm: 'row' } }}>
                                 <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -125,7 +125,7 @@ const OrganicFreshFruit = () => {
                                             padding: '40px 40px',
                                             flexDirection: 'column',
                                             gap: '20px',
-                                            alignItems: 'start',
+                                            alignItems: {sm:'start', xs:'center'},
                                             border: '1px solid #E7E7E7',
                                             borderRadius: '6px',
                                         }}

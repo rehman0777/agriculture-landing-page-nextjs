@@ -13,20 +13,20 @@ const FeatureProducts = () => {
                     <Typography variant="h6" sx={{ fontFamily: 'var(--font-shadows_two)', color: '#49A760' }}>Customers’ Choice</Typography>
                     <Typography variant="h4" sx={{ fontFamily: 'var(--font-outfit)', fontWeight: '600', color: '#04000B' }}>Featured Products</Typography>
                 </Box>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{justifyContent:'center'}}>
                     {FeatureProductsData.map((featureProduct, index) => (
-                        <Grid size={{ md: 3, sm: 6, }} key={index}>
+                        <Grid size={{ lg: 3, md: 4, sm:6 }} key={index} sx={{width:'100%'}}>
                             <Item >
                                 <Box
                                     sx={{
                                         display: 'flex',
                                         padding: '40px 40px',
-                                        flexDirection: 'column',
                                         gap: '20px',
-                                        alignItems: 'start',
+                                        alignItems: {sm:'start', xs:'center'},
                                         background: '#FFFFFF',
                                         borderRadius: '6px',
-                                        height: '420px'
+                                        height: {sm:'420px', xs:'auto'},
+                                        flexDirection:"column"
                                     }}
                                 >
                                     <Box sx={{ position: 'relative', width: '162px', height: '167px', margin: '0px auto' }}>

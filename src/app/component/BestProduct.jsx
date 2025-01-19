@@ -42,7 +42,10 @@ const BestProduct = () => {
                                 <Typography variant="subtitle2" sx={{ fontFamily: 'var(--font-shadows_two)', color: '#49A760' }}>Healthy Foods
                                     Healthy Foods
                                 </Typography>
-                                <Typography variant="h3" sx={{ fontFamily: "var(--font-outfit)", mb: "10px", fontWeight: '600', color: "#04000B" }}>
+                                <Typography variant="h3" sx={{typography: {
+      xs: 'h4', 
+      sm: 'h2',
+    }, fontFamily: "var(--font-outfit)", mb: "10px", fontWeight: '600', color: "#04000B" }}>
                                     Best Organic
                                     Agriculture Firms
                                 </Typography>
@@ -75,15 +78,15 @@ const BestProduct = () => {
                             </Box>
                         </Item>
                     </Grid >
-                    <Grid size={{ md: 6 }} sx={{ padding: '0px' }}>
+                    <Grid size={{ md: 6 }} sx={{ padding: '0px', width:'100%' }}>
                         <Item>
                             <Box
                                 sx={{
                                     display: 'grid',
                                     gap: 5,
                                     gridTemplateColumns: {
-                                        xs: '1fr',
-                                        sm: 'repeat(2, 1fr)',
+                                        // xs: '1fr',
+                                        xs: 'repeat(2, 1fr)',
                                     },
                                 }}
                             >

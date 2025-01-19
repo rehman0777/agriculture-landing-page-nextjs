@@ -6,6 +6,7 @@ import Farmer from '@/app/assets/images/div.shape.png';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import Item from './Item';
 import Image from 'next/image';
+import SectionImage from '@/app/assets/images/17.png.png'
 
 
 const HealthyLifeSection = () => {
@@ -46,9 +47,9 @@ const HealthyLifeSection = () => {
     }, [isCounting]);
 
     return (
-        <Box ref={sectionRef}>
+        <Box ref={sectionRef} sx={{position:'relative', pb:'80px'}}>
             <Grid container spacing={0}>
-                <Grid size={{sm: 5}} >
+                <Grid size={{md: 5}} sx={{width:'100%', marginBottom:{md:'0px', xs:'-10px'}}}>
                     <Item > 
                         <Box sx={{ height: 'fit-content' }}>
                         
@@ -61,7 +62,7 @@ const HealthyLifeSection = () => {
                     </Item>
                 </Grid>
 
-                <Grid size={{sm: 7}} sx={{ background: '#4BAF47', display: 'flex', justifyContent: 'center' }}>
+                <Grid size={{md: 7}} sx={{width:'100%', background: '#4BAF47', display: 'flex', height:{sm:'600px', xs:'660px'}, justifyContent: 'center' }}>
                     <Item sx={{display:'flex', alignItems:'center'}}>
                         <Container maxWidth="sm">
                         <Typography
@@ -89,10 +90,10 @@ const HealthyLifeSection = () => {
                                 eos consectetur similique minus culpa odio temporibus.
                             </Typography>
                             <Stack
-                                direction="row"
+                                direction={{sm:"row", xs:'column'}}
                                 spacing={4}
                                 sx={{alignItems:'center',}}
-                                divider={<Divider orientation="vertical" flexItem sx={{ borderColor: '#FFFFFF', }} />}
+                                divider={<Divider orientation={{sm:"vertical", xs:'horizontal'}} flexItem sx={{ borderColor: '#FFFFFF', }} />}
                             >
                                 <Box sx={{display:'flex', py:1, flexDirection:'column', alignItems:'center', gap:2}}>
                                 <Box sx={{ position: 'relative', textAlign: 'center' }}>
@@ -181,6 +182,9 @@ const HealthyLifeSection = () => {
                     </Item>
                 </Grid>
             </Grid>
+            <Box sx={{position: 'absolute', width:{sm:'100%', xs:'50%'}, bottom:'-30px', right:{sm:'0px', xs:'-60px'}}}>
+                <Image src={SectionImage} alt='SectionImage'></Image>
+            </Box>
         </Box>
     );
 };

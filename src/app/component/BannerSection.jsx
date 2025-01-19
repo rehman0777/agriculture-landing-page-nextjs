@@ -24,11 +24,14 @@ const BannerSection = () => {
                     sx={{ height: '100%', flexDirection: 'column' }}
                 >
                     <Grid container spacing={2}>
-                        <Grid size={7} sx={{ padding: '0px'}}>
+                        <Grid size={{md: 7}} sx={{ padding: '0px'}}>
                             <Item sx={{display:'flex',gap:'10px', flexDirection:'column', 
                             }}>
                                 <Typography variant="h6" sx={{ fontFamily: 'var(--font-shadows_two)', color: '#FFFFFF' }}>Best Agro Company</Typography>
-                                <Typography variant="h2" sx={{ fontFamily: 'var(--font-outfit)', fontWeight: '600', color: '#FFFFFF' }} >Organic agriculture
+                                <Typography variant="h2" sx={{typography: {
+      xs: 'h5', 
+      sm: 'h2',
+    }, fontFamily: 'var(--font-outfit)', fontWeight: '600', color: '#FFFFFF' }} >Organic agriculture
                                     farming products</Typography>
                                     <Button variant='contained' sx={{background:'#F7C35F',':hover':{
                                         background : '#EEC044',

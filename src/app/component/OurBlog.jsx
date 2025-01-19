@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Card, CardActions, CardContent, CardMedia, Button } from '@mui/material'
+import { Box, Container, Typography, useTheme, Card, CardActions, CardContent, CardMedia, Button } from '@mui/material'
 import Grid from '@mui/material/Grid2';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,7 +8,32 @@ import Blog2 from '@/app/assets/images/Link2.jpg.png'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
+const blogData = [
+    {
+        blogName: 'Expression acceptance imprudence particular',
+        authorName: 'Md Sohag',
+        blogImg: Blog1,
+        postDate: {
+            day: '26',
+            month: 'april',
+            year: '2023'
+        },
+    },
+    {
+        blogName: 'Considered imprudence of technical friendship.',
+        authorName: 'Md Sohag',
+        blogImg: Blog2,
+        postDate: {
+            day: '25',
+            month: 'Dec',
+            year: '2023'
+        },
+    },
+]
+
+
 const OurBlog = () => {
+    const theme = useTheme();
     return (
         <Box sx={{ padding: '80px 0px' }}>
             <Container fixed>
@@ -37,7 +62,7 @@ const OurBlog = () => {
                 </Box>
                 <Box>
                     <Grid container spacing={2}>
-                        <Grid size={{ md: 6 }}>
+                        <Grid size={{ lg: 6 }} sx={{width:'100%'}}>
                             <Box
                                 sx={{
                                     width: "100%",
@@ -104,52 +129,62 @@ const OurBlog = () => {
                                 </Box>
                             </Box>
                         </Grid>
-                        <Grid size={{ md: 6 }}>
+                        <Grid size={{ lg: 6 }}>
                             <Box>
                                 <Grid container spacing={2}>
-                                    <Grid size={{ md: 6 }}>
-                                        <Box sx={{width:'100%'}}>
-                                            <Box sx={{position:'relative'}}>
-                                            <Image
-                                                style={{width:'100%', overflow:'hidden',  borderRadius:'6px'}}
-                                                src={Blog1}
-                                                alt='blogImg'
-                                            />
-                                            <Box sx={{background:'#F7C35F', borderTopRightRadius:'6px',  position:'absolute', bottom:'4px', left:'0', padding:'20px'}}>
-                                                <Typography variant="h4" sx={{fontFamily:'var(--font-outline)', fontWeight:'600'}}>26</Typography>
-                                            </Box>
-                                            </Box>
-                                            <Box sx={{position:'relative'}}>
-                                                <Box sx={{background:'#49A760', borderTopRightRadius:'6px', borderRadius:'0px 0px 6px 6px', position:'relative', top:'-4px', left:'0', width:'fit-content', padding:'5px 10px'}}>
-                                                    <Typography variant='caption' sx={{fontFamily:'var(--font-outline)', color:'#FFFFFF'}}>Aug, 2023</Typography>
+                                    {blogData.map((blogItem, index) => {
+                                        return (
+                                            <Grid size={{ md: 6 }} key={index} sx={{width:"100%"}}>
+                                                <Box sx={{ width: '100%' }}>
+                                                    <Box sx={{ position: 'relative', width: '100%' }}>
+                                                        <Image
+                                                            style={{ width: '100%', overflow: 'hidden', borderRadius: '6px' }}
+                                                            src={blogItem.blogImg}
+                                                            alt='blogImg'
+                                                        />
+                                                        <Box sx={{ position: 'absolute', width: {md:'35%', xs:'20%'},[theme.breakpoints.down(426)]: {
+                        width: '30%'
+                      }, bottom: '-32px', left: '0', }}>
+                                                            <Box sx={{ background: '#F7C35F', textAlign:'center', width: '100%', borderTopRightRadius: '6px', padding: '20px' }}>
+                                                                <Typography variant="h4" sx={{ fontFamily: 'var(--font-outline)', fontWeight: '600' }}>{blogItem.postDate.day}</Typography>
+                                                            </Box>
+                                                            <Box sx={{ background: '#49A760', width: '100%', borderTopRightRadius: '6px', borderRadius: '0px 0px 6px 6px', position: 'relative', top: '-4px', left: '0', textAlign:'center', padding: '5px 10px' }}>
+                                                                <Typography variant='caption' sx={{ fontFamily: 'var(--font-outline)', color: '#FFFFFF' }}>{blogItem.postDate.month}, {blogItem.postDate.year}</Typography>
+                                                            </Box>
+                                                        </Box>
+
+                                                    </Box>
+                                                    <Box sx={{ position: 'relative', mt: 5 }}>
+
+                                                        <Box sx={{ display: 'flex', mt: 2, alignItems: 'center' }}>
+                                                            <Typography variant='subtitle2' sx={{ color: '#666666', fontFamily: 'var(--font-outline)', }}>{blogItem.authorName}</Typography>
+                                                            <Typography variant='subtitle2' sx={{
+                                                                ':before': {
+                                                                    content: "''",
+                                                                    background: "#04000B",
+                                                                    width: '5px',
+                                                                    height: '5px',
+                                                                    borderRadius: '50px',
+                                                                    display: 'flex',
+                                                                    margin: '0px 10px'
+                                                                }, display: 'flex', color: '#666666', fontFamily: 'var(--font-outline)', alignItems: 'center'
+                                                            }}>
+                                                                {`${blogItem.postDate.day} ${blogItem.postDate.month}, ${blogItem.postDate.year}`}
+                                                            </Typography>
+                                                        </Box>
+                                                        <Typography variant="h6" sx={{ fontFamily: 'var(--font-outline)', color: '#04000B', fontWeight: '600', marginBottom: "5px" }}>
+                                                            {blogItem.blogName}
+                                                        </Typography>
+                                                        <Link href='' className='linkArrow' style={{ color: '#04000B', textTransform: 'uppercase', }}>
+                                                            Continue Reading
+                                                            <ArrowForwardIcon className='linkArrowIcon' />
+                                                        </Link>
+                                                    </Box>
+
                                                 </Box>
-                                                <Box>
-                                                <Box sx={{display:'flex', mt:2, alignItems:'center'}}>
-                                                    <Typography variant='subtitle2' sx={{ color:'#666666', fontFamily:'var(--font-outline)',}}>Md Sohag</Typography>
-                                                    <Typography variant='subtitle2' sx={{':before':{
-                                                        content:"''",
-                                                        background:"#04000B",
-                                                        width:'5px',
-                                                        height:'5px',
-                                                        borderRadius:'50px',
-                                                        display:'flex',
-                                                        margin:'0px 10px'
-                                                    }, display:'flex', color:'#666666', fontFamily:'var(--font-outline)', alignItems:'center'}}>25 April, 2023</Typography>
-                                                </Box>
-                                                <Typography variant="h6" sx={{ fontFamily:'var(--font-outline)', color:'#04000B',fontWeight:'600', marginBottom:"5px"}}>
-                                                Expression acceptance
-                                                imprudence particular
-                                                </Typography>
-                                                <Link href=''className='linkArrow'> 
-                                                <Typography variant='subtitle2' sx={{ fontFamily: ' var(--font-outfit', fontWeight:'600',  textTransform: 'uppercase', }}>Continue Reading</Typography> 
-                                                <ArrowForwardIcon className='linkArrowIcon' />
-                                                </Link>
-                                            </Box>
-                                            </Box>
-                                            
-                                        </Box>
-                                    </Grid>
-                                    <Grid size={{ md: 6 }}> </Grid>
+                                            </Grid>
+                                        )
+                                    })}
                                 </Grid>
                             </Box>
                         </Grid>

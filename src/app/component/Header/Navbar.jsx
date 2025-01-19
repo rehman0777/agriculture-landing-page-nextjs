@@ -89,7 +89,10 @@ function Navbar() {
                         </Drawer>
                     </Box>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: '30px' }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: {
+                        lg:'center',
+                        md:'flex-start'
+                    }, gap: '30px' }}>
                         {pages.map((page) => (
                             <Link
                                 key={page}

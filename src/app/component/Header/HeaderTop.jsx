@@ -12,10 +12,10 @@ import Logo from '@/app/assets/images/logo.png'
 const HeaderTop = () => {
     return (
         <Box sx={{ background: '#1F4E3D', }}>
-            <Container fixed sx={{ justifyContent: 'center', display: 'flex' }}>
+            <Container fixed sx={{ justifyContent: 'center', textAlign:{sm:'left', xs:'center'}, display: 'flex' }}>
                 <Stack
-                    direction="row"
-                    divider={<Divider orientation="vertical" flexItem sx={{background:'#FFFFFF'}} />}
+                    direction={{sm:"row", xs:'column'}}
+                    divider={<Divider orientation={{sm:"vertical", xs:'horizontal'}} flexItem sx={{background:'#FFFFFF'}} />}
                     justifyContent={'space-between'}
                     width={'100%'}
                 >
@@ -31,7 +31,7 @@ const HeaderTop = () => {
                         <Image src={Logo} priority={true} alt='Web Logo'></Image>
                     </Box>
 
-                    <Box py={2} display={'flex'} gap={1}>
+                    <Box py={2} display={'flex'} gap={1} sx={{justifyContent:'center'}}>
                         <Image src={symbolImage} priority={true} width={45} height={40} alt="Picture of the author"></Image>
                         <Box>
                             <Typography variant="subtitle2" color="white" fontFamily={`var(--font-outfit)`}>Write Email</Typography>
