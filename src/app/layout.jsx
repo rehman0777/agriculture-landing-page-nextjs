@@ -1,6 +1,8 @@
 import { Metadata } from "next"; 
 import { Outfit } from "next/font/google";
 import { Shadows_Into_Light_Two } from "next/font/google";
+import {Manrope } from 'next/font/google'
+import {Covered_By_Your_Grace} from 'next/font/google'
 import "@/app/assets/style/globals.css";
 import Header from '@/app/component/Header/Header'
 import Footer from '@/app/component/Footer/Footer'
@@ -11,7 +13,18 @@ const outfit = Outfit({
   style: ["normal"],
   variable: "--font-outfit",
 });
-
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal"],
+  variable: "--font-manrope",
+});
+const covered = Covered_By_Your_Grace({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal"],
+  variable: "--font-coverd",
+});
 const shadowsTwo = Shadows_Into_Light_Two({
   subsets: ["latin"],
   weight: ["400"],
@@ -28,7 +41,7 @@ export const CustomMetadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.variable} ${shadowsTwo.variable}`}>
+      <body className={`${outfit.variable} ${manrope.variable} ${covered.variable} ${shadowsTwo.variable}`}>
         <Header/>
         {children}
         <Footer/>

@@ -1,6 +1,8 @@
 :root {
   --font-outfit: 'Outfit', serif;
+  --font-manrope: 'Manrope', serif;
   --font-shadows_two: 'Shadows Into Light Two', serif;
+  --font-covered: 'Covered By Your Grace', serif;
 }
 
 
@@ -95,6 +97,39 @@ a {
 
 .footerBottomLink:hover {
   color: #FFFFFF !important;
+}
+
+.pageTwoBanner{
+  background-image: url('../images//heroSectionImg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-position: center;
+  width: '100%';
+}
+.LeaderInAgriculture{
+  background-image: url('../images/section2banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  background-position: center;
+  width: '100%';
+}
+.weOfferSection{
+  background-image: url('../images/weOffer.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  background-position-x: center;
+  background-position-y: bottom;
+  width: '100%';
+}
+.BrandLogoSec{
+  background-image: url('../images/partnerBanner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  width: '100%';
 }
 
 @media (prefers-color-scheme: dark) {

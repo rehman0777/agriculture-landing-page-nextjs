@@ -24,7 +24,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 
-const pages = ['home', 'pages', 'projects', 'services', 'blog', 'shop'];
+const pages = ['home', 'home2', 'projects', 'services', 'blog', 'shop'];
 
 function Navbar() {
     const [open, setOpen] = React.useState(false);
@@ -91,7 +91,7 @@ function Navbar() {
                         {pages.map((page) => (
                             <Link
                                 key={page}
-                                href={'/'}
+                                href={page === "home" ? "/" : `/${page}`}
                                 onClick={handleCloseNavMenu}
                                 style={{ my: 2, color: '#232323', display: 'block', textTransform: 'capitalize' }}
                             >
