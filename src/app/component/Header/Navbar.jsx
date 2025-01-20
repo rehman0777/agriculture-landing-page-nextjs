@@ -34,11 +34,6 @@ function Navbar() {
     };
    
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-   
-
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };

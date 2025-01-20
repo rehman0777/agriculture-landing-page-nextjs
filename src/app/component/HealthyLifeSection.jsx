@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useRef } from 'react';
-import { Box, Container, Typography, Stack,List, Divider, CircularProgress, } from '@mui/material';
+import { Box, Container, Typography, Stack, List, Divider, CircularProgress, } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Farmer from '@/app/assets/images/div.shape.png';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
@@ -47,13 +47,13 @@ const HealthyLifeSection = () => {
     }, [isCounting]);
 
     return (
-        <Box ref={sectionRef} sx={{position:'relative', pb:'80px'}}>
+        <Box ref={sectionRef} sx={{ position: 'relative', pb: '80px' }}>
             <Grid container spacing={0}>
-                <Grid size={{md: 5}} sx={{width:'100%', marginBottom:{md:'0px', xs:'-10px'}}}>
-                    <Item > 
+                <Grid size={{ md: 5 }} sx={{ width: '100%', marginBottom: { md: '0px', xs: '-10px' } }}>
+                    <Item >
                         <Box sx={{ height: 'fit-content' }}>
-                        
-                        <Image
+
+                            <Image
                                 src={Farmer}
                                 alt="Farmer"
                                 style={{ height: '600px', width: '100%', objectFit: 'cover' }}
@@ -62,10 +62,10 @@ const HealthyLifeSection = () => {
                     </Item>
                 </Grid>
 
-                <Grid size={{md: 7}} sx={{width:'100%', background: '#4BAF47', display: 'flex', height:{sm:'600px', xs:'660px'}, justifyContent: 'center' }}>
-                    <Item sx={{display:'flex', alignItems:'center'}}>
+                <Grid size={{ md: 7 }} sx={{ width: '100%', background: '#4BAF47', display: 'flex', height: { sm: '600px', xs: '660px' }, justifyContent: 'center' }}>
+                    <Item sx={{ display: 'flex', alignItems: 'center' }}>
                         <Container maxWidth="sm">
-                        <Typography
+                            <Typography
                                 variant="h4"
                                 sx={{
                                     mb: 2,
@@ -90,101 +90,116 @@ const HealthyLifeSection = () => {
                                 eos consectetur similique minus culpa odio temporibus.
                             </Typography>
                             <Stack
-                                direction={{sm:"row", xs:'column'}}
+                                direction={{ sm: "row", xs: 'column' }}
                                 spacing={4}
-                                sx={{alignItems:'center',}}
-                                divider={<Divider orientation={{sm:"vertical", xs:'horizontal'}} flexItem sx={{ borderColor: '#FFFFFF', }} />}
+                                sx={{ alignItems: 'center', }}
+                                divider={<Divider orientation={{ sm: "vertical", xs: 'horizontal' }} flexItem sx={{ borderColor: '#FFFFFF', }} />}
                             >
-                                <Box sx={{display:'flex', py:1, flexDirection:'column', alignItems:'center', gap:2}}>
-                                <Box sx={{ position: 'relative', textAlign: 'center' }}>
-                                    <CircularProgress
-                                        size={130}
-                                        variant="determinate"
-                                        value={progress}
-                                        thickness={0.9}
-                                        sx={{
-                                            color: '#2a7d3e',
-                                            position: 'absolute',
-                                            zIndex: 1,
-                                        }}
-                                    />
-                                    <CircularProgress
-                                        size={130}
-                                        variant="determinate"
-                                        value={100}
-                                        thickness={0.5}
-                                        sx={{
-                                            color: '#FFFFFF',
-                                            padding: '1px'
-                                        }}
-                                    />
-                                    <Typography
-                                        variant="h5"
-                                        sx={{
-                                            position: 'absolute',
-                                            top: '50%',
-                                            left: '50%',
-                                            transform: 'translate(-50%, -50%)',
-                                            fontWeight: '600',
-                                            fontFamily:'var(--font-outline)',
-                                            color: '#F7C35F',
-                                        }}
-                                    >
-                                        {progress}%
-                                    </Typography>
-                                </Box>
+                                <Box sx={{ display: 'flex', py: 1, flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+                                    <Box sx={{ position: 'relative', textAlign: 'center' }}>
+                                        <CircularProgress
+                                            size={130}
+                                            variant="determinate"
+                                            value={progress}
+                                            thickness={0.9}
+                                            sx={{
+                                                color: '#2a7d3e',
+                                                position: 'absolute',
+                                                zIndex: 1,
+                                            }}
+                                        />
+                                        <CircularProgress
+                                            size={130}
+                                            variant="determinate"
+                                            value={100}
+                                            thickness={0.5}
+                                            sx={{
+                                                color: '#FFFFFF',
+                                                padding: '1px'
+                                            }}
+                                        />
+                                        <Typography
+                                            variant="h5"
+                                            sx={{
+                                                position: 'absolute',
+                                                top: '50%',
+                                                left: '50%',
+                                                transform: 'translate(-50%, -50%)',
+                                                fontWeight: '600',
+                                                fontFamily: 'var(--font-outline)',
+                                                color: '#F7C35F',
+                                            }}
+                                        >
+                                            {progress}%
+                                        </Typography>
+                                    </Box>
                                     <Typography variant="subtitle2" sx={{
-                                            fontFamily: 'var(--font-outfit)',
-                                            fontWeight: '600',
-                                            color: '#FFFFFF',
-                                        }}>Organic Solutions</Typography>
+                                        fontFamily: 'var(--font-outfit)',
+                                        fontWeight: '600',
+                                        color: '#FFFFFF',
+                                    }}>Organic Solutions</Typography>
                                 </Box>
-                                
+
                                 <Box>
-                                   <List sx={{display: 'flex', flexDirection:'column', gap:2}}>
-                                    <Box sx={{display: 'flex', alignItems:'center', gap:3}}>   
-                                    <CheckBoxOutlinedIcon sx={{
-                                            color: '#F8F9FA',
-                                        }} />
+                                    <List sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                                            <CheckBoxOutlinedIcon sx={{
+                                                color: '#F8F9FA',
+                                            }} />
 
-                                        <Typography variant="subtitle2" sx={{
-                                            fontFamily: 'var(--font-outfit)',
-                                            fontWeight: '500',
-                                            color: '#F8F9FA',
-                                        }} >Biodynamic food</Typography>
+                                            <Typography variant="subtitle2" sx={{
+                                                fontFamily: 'var(--font-outfit)',
+                                                fontWeight: '500',
+                                                color: '#F8F9FA',
+                                            }} >Biodynamic food</Typography>
                                         </Box>
-                                        <Box sx={{display: 'flex', alignItems:'center', gap:3}}>   
-                                    <CheckBoxOutlinedIcon sx={{
-                                            color: '#F8F9FA',
-                                        }} />
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                                            <CheckBoxOutlinedIcon sx={{
+                                                color: '#F8F9FA',
+                                            }} />
 
-                                        <Typography variant="subtitle2" sx={{
-                                            fontFamily: 'var(--font-outfit)',
-                                            fontWeight: '500',
-                                            color: '#F8F9FA',
-                                        }} >Organic gardening</Typography>
+                                            <Typography variant="subtitle2" sx={{
+                                                fontFamily: 'var(--font-outfit)',
+                                                fontWeight: '500',
+                                                color: '#F8F9FA',
+                                            }} >Organic gardening</Typography>
                                         </Box>
-                                        <Box sx={{display: 'flex', alignItems:'center', gap:3}}>   
-                                    <CheckBoxOutlinedIcon sx={{
-                                            color: '#F8F9FA',
-                                        }} />
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
+                                            <CheckBoxOutlinedIcon sx={{
+                                                color: '#F8F9FA',
+                                            }} />
 
-                                        <Typography variant="subtitle2" sx={{
-                                            fontFamily: 'var(--font-outfit)',
-                                            fontWeight: '500',
-                                            color: '#F8F9FA',
-                                        }} >Organic food certification</Typography>
+                                            <Typography variant="subtitle2" sx={{
+                                                fontFamily: 'var(--font-outfit)',
+                                                fontWeight: '500',
+                                                color: '#F8F9FA',
+                                            }} >Organic food certification</Typography>
                                         </Box>
-                                   </List>
+                                    </List>
                                 </Box>
-                            </Stack>  
+                            </Stack>
                         </Container>
                     </Item>
                 </Grid>
             </Grid>
-            <Box sx={{position: 'absolute', width:{sm:'100%', xs:'50%'}, bottom:'-30px', right:{sm:'0px', xs:'-60px'}}}>
-                <Image src={SectionImage} alt='SectionImage'></Image>
+            <Box sx={{
+                position: 'absolute', width: { xs: 250, md: 350 },
+                height: { xs: 250, md: 350 },
+                 bottom: '-50px', right: {
+                    sm: '0', 
+                    xs: '-40px',
+                  },
+                  '@media (max-width: 450px)': {
+                    right: '-80px',
+                  },
+                  '@media (max-width: 375px)': {
+                    right: '-100px',
+                  },
+            }}>
+                <Image src={SectionImage} layout="fill"
+                    objectFit="contain" alt='SectionImage'></Image>
             </Box>
+
         </Box>
     );
 };

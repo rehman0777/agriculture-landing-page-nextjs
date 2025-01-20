@@ -11,7 +11,10 @@ const FeatureProducts = () => {
             <Container fixed>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, textAlign: 'center', mb:4 }}>
                     <Typography variant="h6" sx={{ fontFamily: 'var(--font-shadows_two)', color: '#49A760' }}>Customers’ Choice</Typography>
-                    <Typography variant="h4" sx={{ fontFamily: 'var(--font-outfit)', fontWeight: '600', color: '#04000B' }}>Featured Products</Typography>
+                    <Typography variant="h4" sx={{typography: {
+                                        lg: 'h4',
+                                        xs: 'h5',
+                                    }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important', color: '#04000B' }}>Featured Products</Typography>
                 </Box>
                 <Grid container spacing={2} sx={{justifyContent:'center'}}>
                     {FeatureProductsData.map((featureProduct, index) => (
@@ -20,24 +23,35 @@ const FeatureProducts = () => {
                                 <Box
                                     sx={{
                                         display: 'flex',
-                                        padding: '40px 40px',
+                                        padding: {sm:'20px 40px', xs:'20px 20px'},
                                         gap: '20px',
                                         alignItems: {sm:'start', xs:'center'},
                                         background: '#FFFFFF',
                                         borderRadius: '6px',
                                         height: {sm:'420px', xs:'auto'},
-                                        flexDirection:"column"
+                                        flexDirection:"column",
+                                        width: {
+                                            xs: '70%',
+                                            sm: '100%', 
+                                          },
+                                          '@media (max-width: 425px)': {
+                                            width: '85%', 
+                                          },
+                                          '@media (max-width: 375px)': {
+                                            width: '100%', 
+                                          },
+                                        margin:'0px auto',
+                                        position:'relative'
                                     }}
                                 >
-                                    <Box sx={{ position: 'relative', width: '162px', height: '167px', margin: '0px auto' }}>
-                                        {featureProduct.sale === '1' && (
+                                    {featureProduct.sale === '1' && (
                                             <Typography
                                                 variant="caption"
                                                 sx={{
                                                     background: 'linear-gradient(93deg, #49A760 50%, #FCC51B 100%)',
                                                     position: 'absolute',
-                                                    top: '-10px',
-                                                    left: '-40px',
+                                                    top: '10px',
+                                                    left: '20px',
                                                     fontFamily: 'var(--font-outfit)',
                                                     fontWeight: '700',
                                                     padding: '2px 10px',
@@ -49,10 +63,12 @@ const FeatureProducts = () => {
                                                 Sale!
                                             </Typography>
                                         )}
+                                    <Box sx={{ position: 'relative', width: '162px', height: '167px', margin: '0px auto' }}>
+                                        
                                         <Image src={featureProduct.img} alt={featureProduct.name} />
                                     </Box>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                                        <Box sx={{ display: 'flex', alignItems: { xs:'center'}, flexDirection: 'column', gap: 1 }}>
                                             <Typography
                                                 variant="body2"
                                                 sx={{
@@ -66,9 +82,10 @@ const FeatureProducts = () => {
                                             <Typography
                                                 variant="h6"
                                                 sx={{
-                                                    fontFamily: 'var(--font-outfit)',
-                                                    fontWeight: '600',
-                                                    color: '#04000B',
+                                                    fontFamily: 'var(--font-outfit) !important',
+                                                        fontWeight: '600 !important',
+                                                        color: '#04000B',
+                                                        typography: { xs: 'subtitle1', md: 'h6' }, 
                                                 }}
                                             >
                                                 {featureProduct.name}

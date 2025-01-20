@@ -47,8 +47,8 @@ const CustomerReview = () => {
         <Box className='Slider_section'
             sx={{
                 padding: "80px 0px",
-                backgroundRepeat:'no-repeat',
-                backgroundSize:'cover'
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover'
             }}
         >
             <Container fixed>
@@ -65,9 +65,10 @@ const CustomerReview = () => {
                         </Typography>
                         <Typography
                             variant="h4"
-                            sx={{
-                                fontFamily: "var(--font-outfit)",
-                                fontWeight: "600",
+                            sx={{typography: {
+                                lg: 'h4',
+                                xs: 'h5',
+                            }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important',
                                 color: "#04000B",
                             }}
                         >
@@ -75,7 +76,7 @@ const CustomerReview = () => {
                         </Typography>
                     </Box>
                 </Box>
-                <Box sx={{ padding: "40px 0", width: '100%' }}>
+                <Box sx={{ padding: {sm:"40px 0",xs:"20px 0"}, width: '100%' }}>
                     <Slider {...sliderSettings}>
                         {testimonials.map((testimonial) => (
                             <Box
@@ -105,11 +106,10 @@ const CustomerReview = () => {
                                         },
                                     }}
                                 >
-                                    {/* Card Content */}
                                     <Box
                                         sx={{
                                             backgroundColor: "white",
-                                            padding: "60px 40px",
+                                            padding: {sm:"60px 40px", xs:"30px 20px 45px 20px"},
                                             borderRadius: "15px",
                                             marginTop: "20px",
                                             position: "relative",
@@ -121,55 +121,64 @@ const CustomerReview = () => {
                                         <Typography
                                             variant="h6"
                                             sx={{
-                                                color: "#555",
-                                                textAlign: "center",
-                                                fontFamily:'var(--font-outfit)'
+                                                fontFamily: 'var(--font-outfit) !important',
+                                                fontWeight: '600 !important',
+                                                color: '#04000B',
+                                                typography: { xs: 'caption', md: 'h6' },
+                                                "@media(max-width: 425px)": {
+                                                    fontSize: '12px'
+                                                }
                                             }}
                                         >
                                             {testimonial.review}
                                         </Typography>
 
-                                      
+
                                         <Box
                                             sx={{
                                                 position: "absolute",
-                                                bottom: "-100px",
+                                                bottom: {md:"-100px", sm:"-65px", xs:"-55px"},
                                                 left: "50%",
                                                 transform: "translateX(-50%)",
                                             }}
                                         >
-                                            <Image
-                                                src={testimonial.avatar}
-                                                alt="ClientImage"
-                                                style={{
-                                                    width: "150px",
-                                                    height: "150px",
-                                                    borderRadius:'80px',
-                                                    position:'relative',
-                                                    border: "10px solid white",
-                                                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+                                            <Box
+                                                sx={{
+                                                    width: { xs: '90px', sm: '100px', md: '150px' },
+                                                    height: { xs: '90px', sm: '100px', md: '150px' },
+                                                    borderRadius: '80px',
+                                                    position: 'relative',
+                                                    border: '10px solid white',
+                                                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+                                                    overflow: 'hidden',
                                                 }}
                                             >
-                                            
-                                            </Image>
-                                            <Box sx={{position:'absolute', background:'#49A760', top:'-10px', left:0, right:0, width:'fit-content', margin: '0px auto', padding:'10px', borderRadius:'50px', display:'flex', alignItems:'center'}}>
-                                                <FormatQuoteIcon/>
+                                                <Image
+                                                    src={testimonial.avatar}
+                                                    alt="ClientImage"
+                                                    layout="fill"
+                                                    objectFit="cover"
+                                                />
+                                            </Box>
+
+                                            <Box sx={{ position: 'absolute', background: '#49A760', top: '-10px', left: 0, right: 0, width: 'fit-content', margin: '0px auto', padding: {md:'10px', sm:'5px', xs:'3px'}, borderRadius: '50px', display: 'flex', alignItems: 'center' }}>
+                                                <FormatQuoteIcon />
                                             </Box>
                                         </Box>
                                     </Box>
 
-                                  <Box sx={{ margin: "120px 0px 40px 0px",}}>
-                                    
-                                  <Typography
-                                        variant="h6"
-                                        sx={{ color: "#333", marginTop: "50px", fontWeight: "bold" }}
-                                    >
-                                        {testimonial.name}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: "#84B09B" }}>
-                                        {testimonial.designation}
-                                    </Typography>
-                                  </Box>
+                                    <Box sx={{ margin: {md:"120px 0px 40px 0px", xs:"74px 0px 20px 0px"}, }}>
+
+                                        <Typography
+                                            variant="h6"
+                                            sx={{ color: "#333", marginTop: "50px", fontWeight: "bold" }}
+                                        >
+                                            {testimonial.name}
+                                        </Typography>
+                                        <Typography variant="body2" sx={{ color: "#84B09B" }}>
+                                            {testimonial.designation}
+                                        </Typography>
+                                    </Box>
                                 </Box>
                             </Box>
                         ))}

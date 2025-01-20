@@ -115,6 +115,17 @@ const OrganicFreshFruit = () => {
                                     display: 'grid',
                                     gap: 5,
                                     gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
+                                    width: {
+                                        xs: '70%',
+                                        sm: '100%', 
+                                      },
+                                      '@media (max-width: 425px)': {
+                                        width: '85%', 
+                                      },
+                                      '@media (max-width: 375px)': {
+                                        width: '100%', 
+                                      },
+                                    margin:'0px auto',
                                 }}
                             >
                                 {ProductsData.map((product, index) => (
@@ -122,23 +133,23 @@ const OrganicFreshFruit = () => {
                                         key={index}
                                         sx={{
                                             display: 'flex',
-                                            padding: '40px 40px',
+                                            padding: {sm:'20px 40px', xs:'20px 20px'},
+                                            alignItems: {sm:'start', xs:'center'},
                                             flexDirection: 'column',
                                             gap: '20px',
-                                            alignItems: {sm:'start', xs:'center'},
                                             border: '1px solid #E7E7E7',
                                             borderRadius: '6px',
+                                            position:'relative'
                                         }}
                                     >
-                                        <Box sx={{ position: 'relative', margin: '0px auto' }}>
-                                            {product.sale === '1' && (
+                                         {product.sale === '1' && (
                                                 <Typography
                                                     variant="caption"
                                                     sx={{
                                                         background: 'linear-gradient(93deg, #49A760 50%, #FCC51B 100%)',
                                                         position: 'absolute',
-                                                        top: '-10px',
-                                                        left: '-40px',
+                                                        top: '10px',
+                                                        left: '20px',
                                                         fontFamily: 'var(--font-outfit)',
                                                         fontWeight: '700',
                                                         padding: '2px 10px',
@@ -150,10 +161,12 @@ const OrganicFreshFruit = () => {
                                                     Sale!
                                                 </Typography>
                                             )}
+                                        <Box sx={{ position: 'relative',  width: '162px', height: '167px', margin: '0px auto' }}>
+                                           
                                             <Image src={product.img} alt={product.name} />
                                         </Box>
                                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                                            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                                            <Box sx={{ display: 'flex', alignItems: {md:'start', xs:'center'}, flexDirection: 'column', gap: 1 }}>
                                                 <Typography
                                                     variant="body2"
                                                     sx={{
@@ -167,10 +180,11 @@ const OrganicFreshFruit = () => {
                                                 <Typography
                                                     variant="h5"
                                                     sx={{
-                                                        fontFamily: 'var(--font-outfit)',
-                                                        fontWeight: '600',
+                                                        fontFamily: 'var(--font-outfit) !important',
+                                                        fontWeight: '600 !important',
                                                         color: '#04000B',
-                                                    }}
+                                                        typography: { xs: 'subtitle1', md: 'h6' }, 
+                                                      }}
                                                 >
                                                     {product.name}
                                                 </Typography>

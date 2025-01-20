@@ -44,7 +44,16 @@ a {
 }
 
 .HeroBanner {
-  background-image: url(../images/hero.png);
+    background-image: url(../images/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  ; 
+}
+.HeroBanner img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }
 
 .freshNaturalBg {
@@ -65,6 +74,9 @@ a {
 
 .MuiTabs-flexContainer {
   justify-content: space-between;
+}
+.BestProductCard{
+  background-image: url('../images/wheat.png');
 }
 
 .Slider_section {

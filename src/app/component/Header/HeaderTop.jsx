@@ -15,7 +15,7 @@ const HeaderTop = () => {
             <Container fixed sx={{ justifyContent: 'center', textAlign:{sm:'left', xs:'center'}, display: 'flex' }}>
                 <Stack
                     direction={{sm:"row", xs:'column'}}
-                    divider={<Divider orientation={{sm:"vertical", xs:'horizontal'}} flexItem sx={{background:'#FFFFFF'}} />}
+                    divider={<Divider orientation={{sm:"vertical", xs:'horizontal'}} flexItem sx={{background:'#FFFFFF', border:'1px solid #FFFFFF'}} />}
                     justifyContent={'space-between'}
                     width={'100%'}
                 >

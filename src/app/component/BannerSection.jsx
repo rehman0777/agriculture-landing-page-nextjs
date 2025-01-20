@@ -9,8 +9,7 @@ import Item from './Item'
 const BannerSection = () => {
     return (
         <Box className='HeroBanner' sx={{
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition:{sm:'center', xs:'right'},
             backgroundRepeat: 'no-repeat',
             width: '100%',
             height: 700
@@ -23,21 +22,27 @@ const BannerSection = () => {
                     justifyContent='center'
                     sx={{ height: '100%', flexDirection: 'column' }}
                 >
-                    <Grid container spacing={2}>
-                        <Grid size={{md: 7}} sx={{ padding: '0px'}}>
-                            <Item sx={{display:'flex',gap:'10px', flexDirection:'column', 
+                    <Grid container spacing={2} sx={{ width:'100%'}}>
+                        <Grid size={{ md: 7 }} sx={{ padding: '0px', width:'100%'}}>
+                            <Item sx={{
+                                display: 'flex', gap: '10px', flexDirection: 'column', alignItems:{sm:'start', xs:'center'}
                             }}>
                                 <Typography variant="h6" sx={{ fontFamily: 'var(--font-shadows_two)', color: '#FFFFFF' }}>Best Agro Company</Typography>
-                                <Typography variant="h2" sx={{typography: {
-      xs: 'h5', 
-      sm: 'h2',
-    }, fontFamily: 'var(--font-outfit)', fontWeight: '600', color: '#FFFFFF' }} >Organic agriculture
+                                <Typography variant="h2" sx={{
+                                    typography: {
+                                        lg: 'h2',
+                                        md: 'h3',
+                                        xs: 'h4',
+                                    }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important', color: '#FFFFFF',textAlign:{sm:'start', xs:'center'}
+                                }} >Organic agriculture
                                     farming products</Typography>
-                                    <Button variant='contained' sx={{background:'#F7C35F',':hover':{
-                                        background : '#EEC044',
-                                    }, borderRadius:'6px',width:'fit-content', padding:'17px 30px'}}>
-                                        <Typography variant="subtitle2" sx={{color:'#04000B', fontFamily:'var(--font-outfit)', fontWeight: '600'}}>Discover More</Typography>
-                                    </Button>
+                                <Button variant='contained' sx={{
+                                    background: '#F7C35F', ':hover': {
+                                        background: '#EEC044',
+                                    }, borderRadius: '6px', width: 'fit-content', padding: '17px 30px'
+                                }}>
+                                    <Typography variant="subtitle2" sx={{ color: '#04000B', fontFamily: 'var(--font-outfit)', fontWeight: '600' }}>Discover More</Typography>
+                                </Button>
                             </Item>
                         </Grid>
 

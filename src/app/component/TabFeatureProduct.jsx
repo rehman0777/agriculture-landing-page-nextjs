@@ -20,7 +20,20 @@ const ProductGrid = ({ products }) => (
     {products.map((product, index) => (
       <Grid
         size={{ md: 6 }}
-        sx={{ width: "100%", boxShadow: "rgba(0, 0, 0, 0.1) 0px 10px 50px", borderRadius: "6px" }}
+        sx={{
+          width: {
+            xs: '70%',
+            sm: '100%',
+            md: '48%'
+          },
+          '@media (max-width: 425px)': {
+            width: '85%',
+          },
+          '@media (max-width: 375px)': {
+            width: '100%',
+          },
+          margin: '0px auto', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px 3px, rgba(0, 0, 0, 0.05) 0px 4px 6px 2px', borderRadius: "6px"
+        }}
         key={index}
       >
         <Box
@@ -28,36 +41,37 @@ const ProductGrid = ({ products }) => (
             display: "flex",
             alignItems: { sm: "flex-start", xs: "center" },
             flexDirection: { sm: "row", xs: "column" },
-            padding: { lg: "50px 50px 50px 0px", md: "50px 20px 50px 0px", xs: "50px 0px 50px 0px" },
+            position: 'relative',
+            padding: "50px 20px 50px 20px",
+            justifyContent: 'space-between',
+            width: '100%'
           }}
         >
-          <Box sx={{ position: "relative", width: "162px", height: "167px", margin: "0px auto" }}>
-            {product.sale === "1" && (
-              <Typography
-                variant="caption"
-                sx={{
-                  background: "linear-gradient(93deg, #49A760 50%, #FCC51B 100%)",
-                  position: "absolute",
-                  top: "-10px",
-                  left: {
-                    lg: "-40px",
-                    md: "-10px",
-                  },
-                  fontFamily: "var(--font-outfit)",
-                  fontWeight: "700",
-                  padding: "2px 10px",
-                  color: "#FFFFFF",
-                  textTransform: "uppercase",
-                  borderRadius: "12px",
-                }}
-              >
-                Sale!
-              </Typography>
-            )}
-            <Image src={product.img} alt={product.name} />
+          {product.sale === "1" && (
+            <Typography
+              variant="caption"
+              sx={{
+                background: "linear-gradient(93deg, #49A760 50%, #FCC51B 100%)",
+                position: "absolute",
+                top: "10px",
+                left: "20px",
+                fontFamily: "var(--font-outfit)",
+                fontWeight: "700",
+                padding: "2px 10px",
+                color: "#FFFFFF",
+                textTransform: "uppercase",
+                borderRadius: "12px",
+              }}
+            >
+              Sale!
+            </Typography>
+          )}
+          <Box sx={{ position: "relative", width: "50%", height: "167px", margin: "0px auto" }}>
+
+            <Image src={product.img} style={{ display: 'flex', margin: '0px auto' }} alt={product.name} />
           </Box>
 
-          <Box sx={{ display: "flex", textAlign: { sm: "start", xs: "center" }, flexDirection: "column", gap: 2 }}>
+          <Box sx={{ display: "flex", margin: '0px auto', width: { md: '50%', sm: '40%' }, textAlign: { sm: "start", xs: "center" }, flexDirection: "column", gap: 2 }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
               <Typography
                 variant="body2"
@@ -73,9 +87,10 @@ const ProductGrid = ({ products }) => (
               <Typography
                 variant="h6"
                 sx={{
-                  fontFamily: "var(--font-outfit)",
-                  fontWeight: "600",
-                  color: "#04000B",
+                  fontFamily: 'var(--font-outfit) !important',
+                  fontWeight: '600 !important',
+                  color: '#04000B',
+                  typography: { xs: 'subtitle1', md: 'h6' },
                 }}
               >
                 {product.name}
@@ -179,9 +194,10 @@ const TabFeatureProduct = () => {
             </Typography>
             <Typography
               variant="h4"
-              sx={{
-                fontFamily: "var(--font-outfit)",
-                fontWeight: "600",
+              sx={{typography: {
+                lg: 'h4',
+                xs: 'h5',
+            }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important',
                 color: "#04000B",
               }}
             >
@@ -232,8 +248,8 @@ const TabFeatureProduct = () => {
                     borderRadius: "6px",
                     padding: "15px 0px",
                     [theme.breakpoints.down(426)]: {
-                        minWidth: '68px'
-                      },
+                      minWidth: '68px'
+                    },
                   }}
                 />
                 <Tab
@@ -250,7 +266,7 @@ const TabFeatureProduct = () => {
                     color: "#04000B",
                     borderRadius: "6px",
                     padding: "15px 10px",
-                    
+
                   }}
                 />
                 <Tab

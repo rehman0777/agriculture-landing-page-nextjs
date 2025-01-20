@@ -50,9 +50,10 @@ const OurBlog = () => {
                         </Typography>
                         <Typography
                             variant="h4"
-                            sx={{
-                                fontFamily: "var(--font-outfit)",
-                                fontWeight: "600",
+                            sx={{typography: {
+                                lg: 'h4',
+                                xs: 'h5',
+                            }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important',
                                 color: "#04000B",
                             }}
                         >

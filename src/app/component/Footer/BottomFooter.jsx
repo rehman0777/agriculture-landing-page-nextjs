@@ -6,7 +6,7 @@ const BottomFooter = () => {
   return (
     <Box sx={{padding:'15px 0px', background:'#1F1E17'}}>
       <Container fixed>
-        <Box sx={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+        <Box sx={{display:'flex', alignItems:'center', gap:{sm:0 , xs:2}, flexDirection:{sm:'row', xs:'column'}, justifyContent:'space-between'}}>
           <Typography variant='subtitle2' sx={{color:'#A5A49A', fontFamily:'var(--font-outfit)', fontWeight:'500'}}>© All Copyright 2024 by Abdul Rehman</Typography>
           <Box>
             <Stack
