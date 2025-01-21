@@ -50,10 +50,11 @@ const OurBlog = () => {
                         </Typography>
                         <Typography
                             variant="h4"
-                            sx={{typography: {
-                                lg: 'h4',
-                                xs: 'h5',
-                            }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important',
+                            sx={{
+                                typography: {
+                                    lg: 'h4',
+                                    xs: 'h5',
+                                }, fontFamily: 'var(--font-outfit) !important', fontWeight: '600 !important',
                                 color: "#04000B",
                             }}
                         >
@@ -63,7 +64,7 @@ const OurBlog = () => {
                 </Box>
                 <Box>
                     <Grid container spacing={2}>
-                        <Grid size={{ lg: 6 }} sx={{width:'100%'}}>
+                        <Grid size={{ lg: 6 }} sx={{ width: '100%' }}>
                             <Box
                                 sx={{
                                     width: "100%",
@@ -135,7 +136,7 @@ const OurBlog = () => {
                                 <Grid container spacing={2}>
                                     {blogData.map((blogItem, index) => {
                                         return (
-                                            <Grid size={{ md: 6 }} key={index} sx={{width:"100%"}}>
+                                            <Grid size={{ md: 6 }} key={index} sx={{ width: "100%" }}>
                                                 <Box sx={{ width: '100%' }}>
                                                     <Box sx={{ position: 'relative', width: '100%' }}>
                                                         <Image
@@ -143,13 +144,15 @@ const OurBlog = () => {
                                                             src={blogItem.blogImg}
                                                             alt='blogImg'
                                                         />
-                                                        <Box sx={{ position: 'absolute', width: {md:'35%', xs:'20%'},[theme.breakpoints.down(426)]: {
-                        width: '30%'
-                      }, bottom: '-32px', left: '0', }}>
-                                                            <Box sx={{ background: '#F7C35F', textAlign:'center', width: '100%', borderTopRightRadius: '6px', padding: '20px' }}>
+                                                        <Box sx={{
+                                                            position: 'absolute', width: { md: '35%', xs: '20%' }, [theme.breakpoints.down(426)]: {
+                                                                width: '30%'
+                                                            }, bottom: '-32px', left: '0',
+                                                        }}>
+                                                            <Box sx={{ background: '#F7C35F', textAlign: 'center', width: '100%', borderTopRightRadius: '6px', padding: '20px' }}>
                                                                 <Typography variant="h4" sx={{ fontFamily: 'var(--font-outline)', fontWeight: '600' }}>{blogItem.postDate.day}</Typography>
                                                             </Box>
-                                                            <Box sx={{ background: '#49A760', width: '100%', borderTopRightRadius: '6px', borderRadius: '0px 0px 6px 6px', position: 'relative', top: '-4px', left: '0', textAlign:'center', padding: '5px 10px' }}>
+                                                            <Box sx={{ background: '#49A760', width: '100%', borderTopRightRadius: '6px', borderRadius: '0px 0px 6px 6px', position: 'relative', top: '-4px', left: '0', textAlign: 'center', padding: '5px 10px' }}>
                                                                 <Typography variant='caption' sx={{ fontFamily: 'var(--font-outline)', color: '#FFFFFF' }}>{blogItem.postDate.month}, {blogItem.postDate.year}</Typography>
                                                             </Box>
                                                         </Box>

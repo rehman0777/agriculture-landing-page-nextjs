@@ -124,12 +124,27 @@ a {
   background-position-y: bottom;
   width: '100%';
 }
-.BrandLogoSec{
-  background-image: url('../images/partnerBanner.png');
+.agricultureMarketSec{
+  background-image: url('../images/banner2.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
   width: '100%';
+}
+.ContactFormBg{
+  background-image: url('../images/contactusbg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: #F8F7F0;
+  height: auto;
+  width: '100%';
+}
+.accordionSection{
+  background-image: url('../images/callUsFrame1.png');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
 }
 
 @media (prefers-color-scheme: dark) {

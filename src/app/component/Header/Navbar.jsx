@@ -50,7 +50,7 @@ function Navbar() {
                         {pages.map((page) => (
                             <Link
                                 key={page}
-                                href={'/'}
+                                href={page === "home" ? "/" : `/${page}`}
                                 onClick={handleCloseNavMenu}
                                 style={{ my: 0, color: '#232323', display: 'block', textTransform: 'capitalize' }}
                             >
@@ -92,7 +92,6 @@ function Navbar() {
                             <Link
                                 key={page}
                                 href={page === "home" ? "/" : `/${page}`}
-                                onClick={handleCloseNavMenu}
                                 style={{ my: 2, color: '#232323', display: 'block', textTransform: 'capitalize' }}
                             >
                                 <Typography sx={{

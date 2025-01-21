@@ -1,50 +1,56 @@
 import { Box, Container, } from '@mui/material';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Image from 'next/image';
+import SliderComponent from './SliderComponent';
 import Logo1 from '../../assets/images/partner-06.webp.png';
 import Logo2 from '@/app/assets/images/partner-07.webp.png';
 import Logo3 from '@/app/assets/images/partner-08.webp.png';
 import Logo4 from '@/app/assets/images/partner-09.webp.png';
 import Logo5 from '@/app/assets/images/partner-10.webp.png';
 
-
+const images = [
+  { src: Logo1, alt: 'wheat' },
+  { src: Logo2, alt: 'agr' },
+  { src: Logo3, alt: 'Ferm' },
+  { src: Logo4, alt: 'Rice' },
+  { src: Logo5, alt: 'Agric' },
+  { src: Logo3, alt: 'Ferm' },
+];
 const BrandSlider = () => {
-    const settings = {
-        dots: false,
-        infinite: true,
-        autoplay: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1
-      };
+  const responsiveSettings = [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 575,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ];
   return (
-    <Box className="BrandLogoSec" sx={{padding:'20px 0px'}}>
+    <Box className="BrandLogoSec" sx={{padding:'20px 0px', background:'#EEC044'}}>
         <Container fixed>
-          <Box className="slider-container">
-          <Slider {...settings}>
-        
-        <Box>
-        <Image src={Logo1} alt='wheat'></Image>
-        </Box>
-        <Box>
-        <Image src={Logo2} alt='agr'></Image>
-        </Box>
-        <Box>
-        <Image src={Logo3} alt='Ferm'></Image>
-        </Box>
-        <Box>
-        <Image src={Logo4} alt='Rice'></Image>
-        </Box>
-        <Box>
-        <Image src={Logo5} alt='Agric'></Image>
-        </Box>
-        <Box>
-        <Image src={Logo3} alt='Ferm'></Image>
-        </Box>
-      </Slider>
-          </Box>
+        <SliderComponent images={images} slidesToShow={5} responsiveSettings={responsiveSettings} />
         </Container>
     </Box>
   )

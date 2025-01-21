@@ -70,7 +70,7 @@ const WeOffer = () => {
                         return (
                             <Grid size={{ md: 4 }} key={id}>
                                 <Item>
-                                    <Box >
+                                    <Box sx={{borderRadius:'6px', overflow:'hidden'}}>
                                         <Box sx={{  height: '255px', position: 'relative' }}>
                                             <Image src={img} alt='service' style={{ width: '100%', }}></Image>
                                             <Box sx={{
