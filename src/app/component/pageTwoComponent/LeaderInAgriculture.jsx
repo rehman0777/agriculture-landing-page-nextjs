@@ -28,7 +28,7 @@ const LeaderInAgriculture = () => {
                                     <Typography variant="subtitle2" sx={{ fontFamily: 'var(--font-manrope)', fontWeight: '500', color: '#878680' }}>There are many variations of passages of Lorem Ipsum available
                                         majority have suffered alteration in some form, by injected humour,
                                         or randomised words which don’t look even slightly believable.</Typography>
-                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap:{lg:'0', md:'10px'}}}>
+                                    <Box sx={{ display: 'flex',  justifyContent: 'space-between', flexDirection:{sm:'row', xs:'column'}, alignItems: {sm:'center' ,xs:'start'}, gap:{lg:'0', xs:'10px' }}}>
                                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                                             <Typography variant="subtitle" sx={{ fontFamily: 'var(--font-covered)', color: '#4BAF47' }}>Modern agriculture types</Typography>
                                             <Typography variant="subtitle" sx={{ fontFamily: 'var(--font-manrope)', fontWeight: '500', color: '#878680' }}>We're here for you from start

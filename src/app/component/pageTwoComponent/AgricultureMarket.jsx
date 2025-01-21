@@ -37,7 +37,7 @@ const AgricultureMarket = () => {
         {
             breakpoint: 425,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             },
         },
     ];

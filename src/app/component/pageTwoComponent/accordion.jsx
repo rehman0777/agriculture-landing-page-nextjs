@@ -56,16 +56,23 @@ const accordion = () => {
         setExpanded(newExpanded ? panel : false);
     };
     return (
-        <Box className='accordionSection' sx={{ padding: '80px 0px', backgroundSize:{md:'contain', xs:'cover'} }}>
+        <Box className='accordionSection' sx={{ padding: '80px 0px', backgroundSize: { md: 'contain', xs: 'cover' } }}>
             <Container fixed>
-                <Grid container spacing={5} sx={{justifyContent:'center'}}>
-                    <Grid size={{md:5}} >
+                <Grid container spacing={5} sx={{ justifyContent: 'center' }}>
+                    <Grid size={{ md: 5 }} >
                         <Item>
-                            <Box sx={{ position: 'relative', width:"100%" }}>
-                                <Image src={CallUs} style={{width:'100%'}}height={500} alt="Planting"></Image>
+                            <Box sx={{ position: 'relative', width: "100%" }}>
+                                <Image src={CallUs} style={{ width: '100%' }} height={500} alt="Planting"></Image>
                                 <Box sx={{
-                                    textAlign: 'center', background: '#EEC044', width: 'fit-content', position: 'absolute', bottom: '5px', left: {lg:'25%', md:'28%',xs:'28%'},
-                                    padding: '20px 35px', display: 'flex', flexDirection: 'column', borderRadius: '20px 20px 0px 0px'
+                                    textAlign: 'center', background: '#EEC044', width: 'fit-content', position: 'absolute', bottom: '5px', left: {
+                                        lg: '25%', xs: '28%', '@media (max-width: 425px)': {
+                                            left: '22%',
+                                        },
+                                        '@media (max-width: 375px)': {
+                                            left: '18%',
+                                        },
+                                    },
+                                    padding: '20px 35px', display: 'flex', flexDirection: 'column', borderRadius: '20px 20px 0px 0px',
                                 }}>
                                     <Typography variant="subtitle2" sx={{
                                         fontFamily: "var(--font-covered)",
@@ -80,7 +87,7 @@ const accordion = () => {
                             </Box>
                         </Item>
                     </Grid>
-                    <Grid size={{md:7}}>
+                    <Grid size={{ md: 7 }}>
                         <Item>
                             <Box>
                                 <Box sx={{ display: "flex", justifyContent: "flex-start", mb: 5 }}>
@@ -108,72 +115,93 @@ const accordion = () => {
                                         </Typography>
                                     </Box>
                                 </Box>
-                                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{'& .MuiAccordion-root':{
+                                <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{
+                                    '& .MuiAccordion-root': {
                                         border: '0px !important'
-                                    }, border:'none !important', marginBottom:"10px"}}>
-                                    <AccordionSummary aria-controls="panel1d-content" sx={{ flexDirection:'row',padding:'5px 10px',border:'none', background:'#F8F7F0',
-                                    borderRadius:'6px',
-                                    "& .MuiSvgIcon-root":{
-                                        fontSize: '52px',
-                                        background: '#C5CE38',
+                                    }, border: 'none !important', marginBottom: "10px"
+                                }}>
+                                    <AccordionSummary aria-controls="panel1d-content" sx={{
+                                        flexDirection: 'row', padding: '5px 10px', border: 'none', background: '#F8F7F0',
                                         borderRadius: '6px',
-                                        color: '#ffffff',
-                                    },
-                                        }} id="panel1d-header">
-                                        <Typography component="span" variant='subtitle1' sx={{ fontFamily: 'var(--font-manrope) ', fontWeight: '800',
-                                        color: "#1F1E17",}}>World’s hottest destinations for vegans</Typography>
+                                        "& .MuiSvgIcon-root": {
+                                            fontSize: '52px',
+                                            background: '#C5CE38',
+                                            borderRadius: '6px',
+                                            color: '#ffffff',
+                                        },
+                                    }} id="panel1d-header">
+                                        <Typography component="span" variant='subtitle1' sx={{
+                                            fontFamily: 'var(--font-manrope) ', fontWeight: '800',
+                                            color: "#1F1E17",
+                                        }}>World’s hottest destinations for vegans</Typography>
                                     </AccordionSummary>
-                                    <AccordionDetails sx={{border:'0px'}}>
-                                        <Typography variant='subtitle2' sx={{ fontFamily: 'var(--font-manrope)', fontWeight: '500',
-                                        color: "#878680",}}>
+                                    <AccordionDetails sx={{ border: '0px' }}>
+                                        <Typography variant='subtitle2' sx={{
+                                            fontFamily: 'var(--font-manrope)', fontWeight: '500',
+                                            color: "#878680",
+                                        }}>
                                             Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo
                                             ligula, molestie ullamcorper vulputate vitae sodales commodo nisl. Nulla
                                             facilisi. Pellentesque est metus many of some form.
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
-                                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{'& .MuiAccordion-root':{
+                                <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{
+                                    '& .MuiAccordion-root': {
                                         border: '0px !important'
-                                    }, border:'none !important', marginBottom:"10px"}}>
-                                    <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" sx={{ flexDirection:'row',padding:'5px 10px',border:'none', background:'#F8F7F0',
-                                    borderRadius:'6px',
-                                    "& .MuiSvgIcon-root":{
-                                        fontSize: '52px',
-                                        background: '#C5CE38',
+                                    }, border: 'none !important', marginBottom: "10px"
+                                }}>
+                                    <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" sx={{
+                                        flexDirection: 'row', padding: '5px 10px', border: 'none', background: '#F8F7F0',
                                         borderRadius: '6px',
-                                        color: '#ffffff',
-                                    },
-                                        }}>
-                                        <Typography component="span" variant='subtitle1' sx={{ fontFamily: 'var(--font-manrope) ', fontWeight: '800',
-                                        color: "#1F1E17",}}>Let’s grow naturaly and live naturaly</Typography>
+                                        "& .MuiSvgIcon-root": {
+                                            fontSize: '52px',
+                                            background: '#C5CE38',
+                                            borderRadius: '6px',
+                                            color: '#ffffff',
+                                        },
+                                    }}>
+                                        <Typography component="span" variant='subtitle1' sx={{
+                                            fontFamily: 'var(--font-manrope) ', fontWeight: '800',
+                                            color: "#1F1E17",
+                                        }}>Let’s grow naturaly and live naturaly</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                    <Typography variant='subtitle2' sx={{ fontFamily: 'var(--font-manrope)', fontWeight: '500',
-                                        color: "#878680",}}>
+                                        <Typography variant='subtitle2' sx={{
+                                            fontFamily: 'var(--font-manrope)', fontWeight: '500',
+                                            color: "#878680",
+                                        }}>
                                             Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo
                                             ligula, molestie ullamcorper vulputate vitae sodales commodo nisl. Nulla
                                             facilisi. Pellentesque est metus many of some form.
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>
-                                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{'& .MuiAccordion-root':{
+                                <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{
+                                    '& .MuiAccordion-root': {
                                         border: '0px !important'
-                                    }, border:'none !important', marginBottom:"10px"}}>
-                                    <AccordionSummary aria-controls="panel3d-content" id="panel3d-header" sx={{ flexDirection:'row',padding:'5px 10px',border:'none', background:'#F8F7F0',
-                                    borderRadius:'6px',
-                                    "& .MuiSvgIcon-root":{
-                                        fontSize: '52px',
-                                        background: '#C5CE38',
+                                    }, border: 'none !important', marginBottom: "10px"
+                                }}>
+                                    <AccordionSummary aria-controls="panel3d-content" id="panel3d-header" sx={{
+                                        flexDirection: 'row', padding: '5px 10px', border: 'none', background: '#F8F7F0',
                                         borderRadius: '6px',
-                                        color: '#ffffff',
-                                    },
-                                        }}>
-                                        <Typography component="span" variant='subtitle1' sx={{ fontFamily: 'var(--font-manrope) ', fontWeight: '800',
-                                        color: "#1F1E17",}}>Best vegetables for your healthy hair</Typography>
+                                        "& .MuiSvgIcon-root": {
+                                            fontSize: '52px',
+                                            background: '#C5CE38',
+                                            borderRadius: '6px',
+                                            color: '#ffffff',
+                                        },
+                                    }}>
+                                        <Typography component="span" variant='subtitle1' sx={{
+                                            fontFamily: 'var(--font-manrope) ', fontWeight: '800',
+                                            color: "#1F1E17",
+                                        }}>Best vegetables for your healthy hair</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                    <Typography variant='subtitle2' sx={{ fontFamily: 'var(--font-manrope)', fontWeight: '500',
-                                        color: "#878680",}}>
+                                        <Typography variant='subtitle2' sx={{
+                                            fontFamily: 'var(--font-manrope)', fontWeight: '500',
+                                            color: "#878680",
+                                        }}>
                                             Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo
                                             ligula, molestie ullamcorper vulputate vitae sodales commodo nisl. Nulla
                                             facilisi. Pellentesque est metus many of some form.

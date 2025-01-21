@@ -1,5 +1,8 @@
 import { Box, Container, IconButton, Typography } from "@mui/material";
 // import plantingVideo from '../../assets/images/planting.mp4'
+import Video from 'next-video';
+
+
 
 const AgricultureVideoSection = () => {
 
@@ -17,14 +20,10 @@ const AgricultureVideoSection = () => {
         overflow: "hidden",
       }}
     >
-      <video
-          id="agriculture-video"
-          muted
+
+        {/* <Video src={} muted
           loop
-          autoPlay
-        >
-          <source src='../../assets/images/planting.mp4' type="video/mp4"/>
-        </video>
+          autoPlay /> */}
     </Box>
   );
 };
