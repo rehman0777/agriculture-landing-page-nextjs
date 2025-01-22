@@ -1,11 +1,10 @@
-import { Metadata } from "next"; 
 import { Outfit } from "next/font/google";
 import { Shadows_Into_Light_Two } from "next/font/google";
 import {Manrope } from 'next/font/google'
 import {Covered_By_Your_Grace} from 'next/font/google'
-import "@/app/assets/style/globals.css";
-import Header from '@/app/component/Header/Header'
-import Footer from '@/app/component/Footer/Footer'
+import "@/assets/style/globals.css";
+import Header from '@/component/Header/Header'
+import Footer from '@/component/Footer/Footer'
 
 const outfit = Outfit({
   subsets: ["latin"],
